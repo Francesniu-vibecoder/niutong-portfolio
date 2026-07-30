@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>牛童 · 海外效果投放 × AI Native</title>
+<style>
+  :root{
+    --bg:#ffffff;
+    --bg-2:#f5f5f2;
+    --ink:#17181a;
+    --ink-2:#4b4e52;
+    --muted:#8b8e92;
+    --line:#dededa;
+    --line-strong:#b9b9b3;
+    --accent:#1f4438;
+    --accent-2:#0f241d;
+    --accent-wash:#eef2ee;
+    --bad:#7a3030;
+    --radius:2px;
+    --serif:"Songti SC","STSong",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Cascadia Mono",monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *{animation-duration:.001ms !important;transition-duration:.001ms !important} }
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:var(--sans);line-height:1.7;font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  .wrap{max-width:980px;margin:0 auto;padding:0 28px}
+  .narrow{max-width:700px;margin:0 auto;padding:0 28px}
+  section{padding:96px 0}
+  h1,h2,h3{font-weight:600;text-wrap:balance;margin:0}
+  a{color:inherit}
+  ::selection{background:var(--accent);color:#fff}
+  .num{font-family:var(--serif);font-variant-numeric:tabular-nums}
+  .eyebrow{
+    display:flex;align-items:center;gap:10px;font-size:12px;font-weight:600;color:var(--accent-2);
+    letter-spacing:.14em;margin-bottom:22px;
+  }
+  .eyebrow::before{content:"";width:24px;height:1px;background:var(--accent)}
+  .tag{
+    display:inline-block;font-size:12px;color:var(--ink-2);
+    border-bottom:1px solid var(--line-strong);padding:1px 0;margin:0 14px 6px 0;
+  }
+  hr.rule{border:none;border-top:1px solid var(--line);margin:0}
+
+  /* ============ MASTHEAD / HERO ============ */
+  header.hero{padding:104px 0 0}
+  .hero h1{
+    font-family:var(--serif);font-size:clamp(32px,5vw,54px);line-height:1.28;
+    letter-spacing:-.01em;color:var(--ink);margin:0 0 22px;max-width:16ch;
+  }
+  .hero .sub{font-size:clamp(15px,1.6vw,17px);color:var(--ink-2);margin-bottom:56px;font-family:var(--serif);font-style:italic}
+  .fact-strip{
+    display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--line);
+  }
+  .fact{padding:26px 28px 30px;border-left:1px solid var(--line)}
+  .fact:first-child{border-left:none;padding-left:0}
+  .fact .n{font-family:var(--serif);font-size:clamp(28px,3.6vw,40px);color:var(--accent-2);display:block;line-height:1}
+  .fact .l{font-size:12.5px;color:var(--muted);margin-top:10px;line-height:1.6}
+  .hero .closer{
+    font-size:14.5px;color:var(--ink-2);padding:26px 0 100px;max-width:640px;
+  }
+  .hero .closer b{color:var(--ink);font-weight:600;border-bottom:1px solid var(--accent)}
+  @media (max-width:640px){ .fact-strip{grid-template-columns:1fr} .fact{border-left:none;border-top:1px solid var(--line);padding-left:0}
+    .fact:first-child{border-top:none} }
+
+  /* ============ METHOD (signature) ============ */
+  .method{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .method h2{font-family:var(--serif);font-size:clamp(24px,3vw,32px);margin-bottom:56px;max-width:20ch}
+  .loop-track{position:relative;margin:0 0 44px}
+  .loop-line{position:absolute;left:0;right:0;top:19px;height:1px;background:var(--line-strong);z-index:0}
+  .loop-line-fill{position:absolute;left:0;top:0;height:100%;width:0%;background:var(--accent);transition:width .15s linear}
+  .loop-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative;z-index:1}
+  .loop-step{text-align:left;padding-top:0}
+  .loop-num{
+    font-family:var(--serif);font-size:15px;color:var(--muted);display:inline-block;
+    background:var(--bg-2);padding-right:10px;margin-bottom:20px;transition:color .35s ease;
+  }
+  .loop-step.is-active .loop-num{color:var(--accent-2);font-weight:700}
+  .loop-step h3{font-family:var(--serif);font-size:18px;color:var(--ink);margin-bottom:8px;transition:color .3s}
+  .loop-step p{font-size:13.5px;color:var(--ink-2);margin:0;line-height:1.7}
+  .loop-step.is-active h3{color:var(--accent-2)}
+  .method .closer{
+    font-family:var(--serif);font-style:italic;font-size:17px;color:var(--ink);
+    border-left:2px solid var(--accent);padding:4px 0 4px 22px;margin-top:8px;max-width:640px;
+  }
+  @media (max-width:720px){ .loop-steps{grid-template-columns:1fr;gap:30px} .loop-line{display:none} .loop-num{padding-right:0} }
+
+  /* ============ PROJECTS ============ */
+  .section-head{margin-bottom:52px;max-width:640px}
+  .section-head h2{font-family:var(--serif);font-size:clamp(24px,3vw,32px)}
+  .section-head p{color:var(--ink-2);margin-top:14px;font-size:14.5px}
+  .proj-card{border-top:1px solid var(--ink)}
+  .proj-card:last-of-type{border-bottom:1px solid var(--ink)}
+  .proj-card summary{
+    list-style:none;cursor:pointer;padding:30px 0;display:flex;gap:24px;
+    align-items:flex-start;justify-content:space-between;
+  }
+  .proj-card summary::-webkit-details-marker{display:none}
+  .proj-main{flex:1;min-width:0}
+  .proj-top{display:flex;align-items:baseline;gap:16px;margin-bottom:14px;flex-wrap:wrap}
+  .proj-client{font-family:var(--serif);font-weight:600;font-size:20px}
+  .proj-meta{font-size:12px;color:var(--muted);letter-spacing:.02em}
+  .proj-strategy{font-size:14.5px;color:var(--ink-2);margin-bottom:12px;max-width:64ch}
+  .proj-strategy b{color:var(--ink);font-weight:600}
+  .proj-result{font-size:14.5px;line-height:1.8;max-width:64ch}
+  .proj-highlight{
+    display:block;font-size:13px;font-style:italic;font-family:var(--serif);
+    color:var(--accent-2);margin-top:14px;padding-left:16px;border-left:2px solid var(--accent);
+  }
+  .chevron{
+    flex:none;width:26px;height:26px;display:flex;align-items:center;justify-content:center;
+    color:var(--muted);font-family:var(--serif);font-size:20px;transition:transform .25s ease;margin-top:4px;
+  }
+  .proj-card[open] .chevron{transform:rotate(45deg);color:var(--accent)}
+  .proj-detail{padding:0 0 40px 0}
+  .proj-detail-inner{padding-top:6px;max-width:760px}
+  .proj-detail ul{margin:0 0 22px;padding-left:20px;font-size:14.5px;color:var(--ink-2);line-height:1.9}
+  .proj-detail li::marker{color:var(--accent)}
+  .proj-shot{border:1px solid var(--line);margin-top:6px}
+  .proj-shot img{width:100%}
+  .shot-cap{font-size:12px;color:var(--muted);margin-top:10px;font-style:italic;font-family:var(--serif)}
+
+  /* ============ TOOL ROOM ============ */
+  .toolroom{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line-strong)}
+  @media (max-width:820px){ .demo-grid{grid-template-columns:1fr} }
+  .demo-card{padding:38px 40px 34px;border-left:1px solid var(--line-strong)}
+  .demo-grid .demo-card:first-child{border-left:none}
+  @media (max-width:820px){ .demo-card{border-left:none;border-top:1px solid var(--line-strong)} .demo-grid .demo-card:first-child{border-top:none} }
+  .demo-card h3{font-family:var(--serif);font-size:19px;margin-bottom:6px}
+  .demo-card .demo-sub{font-size:13px;color:var(--muted);margin-bottom:26px;line-height:1.6}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-size:11.5px;font-weight:600;color:var(--muted);letter-spacing:.08em;margin-bottom:8px}
+  .field textarea{
+    width:100%;font-family:var(--sans);font-size:13.5px;border:none;border-bottom:1px solid var(--line-strong);
+    padding:6px 0 10px;resize:vertical;min-height:44px;background:transparent;color:var(--ink);
+  }
+  .field textarea:focus{outline:none;border-color:var(--accent)}
+  .btn{
+    font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.03em;border:1px solid var(--ink);border-radius:0;
+    padding:11px 22px;cursor:pointer;background:var(--ink);color:#fff;
+  }
+  .btn:hover{background:var(--accent-2);border-color:var(--accent-2)}
+  .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line-strong)}
+  .btn-ghost:hover{background:var(--bg);border-color:var(--ink)}
+  .prompt-out{
+    margin-top:20px;background:var(--ink);color:#e7e7e3;padding:20px 22px;
+    font-family:var(--mono);font-size:12.5px;line-height:1.8;white-space:pre-wrap;display:none;
+  }
+  .prompt-out.show{display:block}
+  .copy-row{display:flex;gap:14px;align-items:center;margin-top:12px}
+  .copy-msg{font-size:12px;color:var(--accent-2);opacity:0;transition:opacity .2s;font-style:italic;font-family:var(--serif)}
+  .copy-msg.show{opacity:1}
+  .slider-row{margin-bottom:22px}
+  .slider-row .top{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;margin-bottom:10px}
+  .slider-row .top span:first-child{color:var(--ink-2)}
+  .slider-row .top span:last-child{font-family:var(--serif);font-weight:700;font-size:16px;color:var(--accent-2)}
+  input[type=range]{width:100%;accent-color:var(--accent-2)}
+  .cpi-disclaimer{
+    font-size:11.5px;color:var(--muted);font-style:italic;font-family:var(--serif);
+    padding-bottom:14px;margin-bottom:22px;border-bottom:1px solid var(--line);
+  }
+  .cpi-chart{width:100%;height:auto;margin-top:10px}
+  .cpi-readout{display:flex;gap:28px;margin-top:18px;flex-wrap:wrap}
+  .cpi-readout div{font-size:12.5px;color:var(--ink-2)}
+  .cpi-readout .v{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--accent-2);display:block}
+  .demo-foot{font-size:13px;color:var(--ink-2);font-style:italic;font-family:var(--serif);margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+
+  /* ============ AI CAPABILITY ============ */
+  .cap-method{
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:24px 0;margin-bottom:44px;font-size:14.5px;color:var(--ink-2);line-height:1.9;max-width:70ch;
+  }
+  .cap-method b{color:var(--ink)}
+  .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);margin-bottom:44px}
+  @media (max-width:720px){ .cap-grid{grid-template-columns:1fr 1fr} }
+  @media (max-width:480px){ .cap-grid{grid-template-columns:1fr} }
+  .cap-item{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 22px}
+  .cap-item .t{font-size:14px;font-weight:600;line-height:1.6;font-family:var(--serif)}
+  .skill-row{display:flex;flex-wrap:wrap}
+
+  /* ============ HOBBY ============ */
+  .hobby-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-strong)}
+  @media (max-width:820px){ .hobby-grid{grid-template-columns:1fr 1fr} }
+  @media (max-width:480px){ .hobby-grid{grid-template-columns:1fr} }
+  .hobby-card{
+    border-left:1px solid var(--line-strong);padding:26px 22px 28px;
+    text-decoration:none;color:inherit;display:block;transition:background .2s;
+  }
+  .hobby-grid a.hobby-card:hover{background:var(--accent-wash)}
+  .hobby-grid .hobby-card:first-child{border-left:none}
+  @media (max-width:820px){ .hobby-grid .hobby-card{border-left:1px solid var(--line-strong)} .hobby-grid .hobby-card:nth-child(odd){border-left:none} }
+  @media (max-width:480px){ .hobby-grid .hobby-card{border-left:none !important;border-top:1px solid var(--line-strong)} .hobby-grid .hobby-card:first-child{border-top:none} }
+  .hobby-card .t{font-weight:600;font-size:14.5px;margin-bottom:8px;font-family:var(--serif)}
+  .hobby-card .d{font-size:12.5px;color:var(--muted);line-height:1.7}
+  .hobby-card .go{font-size:12px;color:var(--accent-2);font-weight:600;margin-top:14px;font-style:italic;font-family:var(--serif)}
+
+  /* ============ ABOUT / CONTACT ============ */
+  .about{border-top:1px solid var(--ink)}
+  .about h2{font-family:var(--serif);font-size:clamp(22px,2.8vw,28px);margin-bottom:40px}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  @media (max-width:720px){ .about-grid{grid-template-columns:1fr;gap:36px} }
+  .about-block h3{font-size:11.5px;color:var(--muted);font-weight:700;letter-spacing:.1em;margin-bottom:16px;text-transform:uppercase}
+  .about-block p{font-size:15px;color:var(--ink-2);line-height:2;margin:0 0 4px}
+  .contact-row{font-size:15px;color:var(--ink);margin-bottom:12px;font-family:var(--serif)}
+  footer{
+    text-align:center;padding:30px 0;font-size:12px;color:var(--muted);border-top:1px solid var(--line);
+  }
+
+  .skip{position:absolute;left:-999px;top:0;background:var(--accent);color:#fff;padding:8px 14px;z-index:100}
+  .skip:focus{left:16px;top:16px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">海外效果投放 · AI NATIVE</span>
+    <h1>我用 AI 重做了「效果广告投放」这份工作</h1>
+    <p class="sub">素材当天产 · 数据自动清 · 判断当天下</p>
+    <div class="fact-strip">
+      <div class="fact"><span class="n num">5 个</span><span class="l">同时操盘的跨行业出海项目<br>（同组同级平均 3 个）</span></div>
+      <div class="fact"><span class="n num">160 万+ 美元</span><span class="l">累计管理预算</span></div>
+      <div class="fact"><span class="n num">4 个</span><span class="l">市场带：欧美澳 / 日韩 / 台湾 / 拉美</span></div>
+    </div>
+    <div class="closer">方法论已在<b>阿里、美团、币安</b>等大型项目充分验证，受邀主讲公司级 AI 课程。</div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ METHOD ============ -->
+<section class="method" id="method">
+  <div class="wrap">
+    <h2>打法内核：判断 — 预估 — 测试 — 回收</h2>
+    <div class="loop-track">
+      <div class="loop-line"><div class="loop-line-fill" id="loopFill"></div></div>
+      <div class="loop-steps" id="loopSteps">
+        <div class="loop-step"><span class="loop-num">01</span><h3>判断</h3><p>当天前端数据当天读，不攒着等复盘</p></div>
+        <div class="loop-step"><span class="loop-num">02</span><h3>预估</h3><p>用前端指标预判后端质量与回收（把 T+1 的答案提前到当天）</p></div>
+        <div class="loop-step"><span class="loop-num">03</span><h3>测试</h3><p>小预算快速验证假设，达标才放量</p></div>
+        <div class="loop-step"><span class="loop-num">04</span><h3>回收</h3><p>结果沉淀成规则和工具，喂回下一次判断</p></div>
+      </div>
+    </div>
+    <div class="closer">循环转得越快，成本越有确定性——这就是多个项目跑赢 KPI 和友商代理的原因。</div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>验证项目</h2>
+      <p>四个不同行业、不同区域的真实项目，方法论在每一个上都跑通过。点开看具体做法。</p>
+    </div>
+
+    <details class="proj-card">
+      <summary>
+        <div class="proj-main">
+          <div class="proj-top">
+            <span class="proj-client">阿里巴巴国际站 · CoCreate Pitch 2026</span>
+            <span class="proj-meta">B2B · 欧美 T1 + 韩国 · Meta · 2026.06–至今</span>
+          </div>
+          <div class="proj-strategy"><b>AI 打法：</b>AI 素材产线，单项目每天至少 6 张图稳定供给——传统做法需一名全职设计或外包（约 300 元/张）且要排期</div>
+          <div class="proj-result">欧美市场做到全代理最低线索成本；客户追加韩国与免费票项目，同等量级成本<b>比友商代理低 60%</b>，用户质量达标。</div>
+          <span class="proj-highlight">工作流被客户团队采用（甲方实习生直接进流程协作）</span>
+        </div>
+        <span class="chevron">+</span>
+      </summary>
+      <div class="proj-detail"><div class="proj-detail-inner">
+        <ul>
+          <li>中英双语文案由 Claude 结构化生成（标题/副标/奖池/CTA 等字段各自独立），生成即带风格与长度约束，不用人工从头改</li>
+          <li>背景图坚持"GPT 只出无文字场景图，文案由程序叠加"——避免了返工率最高的"AI 画错文字"问题</li>
+          <li>每张图自动查红线（品牌规范/合规小字/繁简体）+ 视觉终审，打回原因会喂回规则库，越用越准</li>
+          <li>覆盖印尼、马来、西语等多语言版本，靠同一套流程扩展，不是另起一套</li>
+        </ul>
+        <div class="proj-shot"><img src="assets/cocreate-workbench.jpg" alt="阿里CoCreate广告素材工作台界面截图，展示文案生成与成品渲染" loading="lazy"></div>
+        <div class="shot-cap">本地工作台实测截图（测试数据，非客户真实投放数据）</div>
+      </div></div>
+    </details>
+
+    <details class="proj-card">
+      <summary>
+        <div class="proj-main">
+          <div class="proj-top">
+            <span class="proj-client">Binance 币安 · 效果投放</span>
+            <span class="proj-meta">加密金融·高客单内购 · 亚洲区主力台湾 · Meta/TikTok · 2026.01–2026.06</span>
+          </div>
+          <div class="proj-strategy"><b>AI 打法：</b>自建 AI 一站式广告工作台（竞品调研 / 热点洞察 / 素材生成 / 审核&命名 / 记忆库），定时自动推送结果，<b>每周省 2 天工时</b></div>
+          <div class="proj-result">半年管理 70 万+ 美元预算，约 <b>5 倍 LTV 回收</b>，回收周期从三个月缩短至一个半月，首单成本<b>优于考核线 40%</b>。</div>
+          <span class="proj-highlight">一人产出与友商 8 名优化师团队水平相当，工作台被客户团队使用</span>
+        </div>
+        <span class="chevron">+</span>
+      </summary>
+      <div class="proj-detail"><div class="proj-detail-inner">
+        <ul>
+          <li>T+1 回传难点：靠前端指标建当日预判体系，判断不用等第二天数据回来</li>
+          <li>超出自身 KPI 范围，额外帮客户做素材级 ROI 分析，定出确定性素材方向</li>
+          <li>工作台自动抓竞品 Meta/Google 广告库，AI 概述打法差异，省掉人工翻竞品广告库的时间</li>
+        </ul>
+        <div class="proj-shot"><img src="assets/binance-suite-competitor.jpg" alt="币安创意工作台竞品洞察模块截图，AI自动分析竞品广告策略" loading="lazy"></div>
+        <div class="shot-cap">工作台「竞品洞察」模块实测截图（内容为公开竞品广告，非客户内部数据）</div>
+      </div></div>
+    </details>
+
+    <details class="proj-card">
+      <summary>
+        <div class="proj-main">
+          <div class="proj-top">
+            <span class="proj-client">美团 Keeta · 巴西骑手招募</span>
+            <span class="proj-meta">本地生活 · 巴西 · Meta/Google/TikTok · 2025.07–至今</span>
+          </div>
+          <div class="proj-strategy"><b>AI 打法：</b>跟 AI 学会直接拉媒体 API，数据清洗与报告输出自动化，<b>每周省出约 1 天</b>全部投到策略判断</div>
+          <div class="proj-result">累计管理 70 万+ 美元预算，接手后<b>综合线索成本降低 50%</b>。</div>
+        </div>
+        <span class="chevron">+</span>
+      </summary>
+      <div class="proj-detail"><div class="proj-detail-inner">
+        <ul>
+          <li>真人实拍替代 AI 素材：巴西本地骑手信任真实感，AI 素材在这个市场反而降低转化</li>
+          <li>跨渠道预算腾挪：Google/Meta/TikTok 三端消耗按当日效率实时挪，不等周报再调</li>
+          <li>周期性预算调控：结合巴西发薪日/月中月末骑手活跃波动排预算节奏</li>
+        </ul>
+        <div class="proj-shot"><img src="assets/keeta-code-proof.jpg" alt="Keeta骑手日报自动化Google Apps Script代码截图，密钥已脱敏" loading="lazy"></div>
+        <div class="shot-cap">自研 Google Apps Script 自动化脚本节选（Meta/Google/TikTok 数据清洗 + 飞书日报，密钥已替换为占位符）</div>
+      </div></div>
+    </details>
+
+    <details class="proj-card">
+      <summary>
+        <div class="proj-main">
+          <div class="proj-top">
+            <span class="proj-client">九州 · AI 短剧 Pinterest 投放</span>
+            <span class="proj-meta">短剧 · 欧美澳 T1 · Pinterest · 2026.05–至今</span>
+          </div>
+          <div class="proj-strategy"><b>AI 打法：</b>用 AI 建"剧目盈亏 CPI 线"预估模型，ROI 达标判断从等待付费回传<b>提前到 $50 消耗量级</b>；每日 AI 报表辅助决策</div>
+          <div class="proj-result">新剧测试淘汰效率<b>提升 50%+</b>；规模化放量下头部 ROI 稳定超 KPI（33% vs 30%）。</div>
+        </div>
+        <span class="chevron">+</span>
+      </summary>
+      <div class="proj-detail"><div class="proj-detail-inner">
+        <ul>
+          <li>盈亏 CPI 线模型的教学版就在下面「工具间」— Demo B，滑一滑就能看懂这个判断是怎么提前的</li>
+        </ul>
+      </div></div>
+    </details>
+
+  </div>
+</section>
+
+<!-- ============ TOOL ROOM ============ -->
+<section class="toolroom" id="toolroom">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>工具间</h2>
+      <p>两个可以直接玩的小 demo，感受一下"提问"和"模型"具体是怎么落地的。</p>
+    </div>
+    <div class="demo-grid">
+
+      <div class="demo-card">
+        <h3>Demo A · 四要素提问生成器</h3>
+        <div class="demo-sub">现状 / 输入输出 / 验收标准 / 约束 —— 四格填完就是一段能直接喂给 AI 的结构化需求</div>
+
+        <div class="field">
+          <label for="f-status">现状</label>
+          <textarea id="f-status">每天手工从 3 个媒体后台导数据拼日报要 10 分钟</textarea>
+        </div>
+        <div class="field">
+          <label for="f-io">输入输出</label>
+          <textarea id="f-io">输入是 Meta API 凭证和表格模板，输出是每天 9 点自动更新并推送到工作群的日报</textarea>
+        </div>
+        <div class="field">
+          <label for="f-accept">验收标准</label>
+          <textarea id="f-accept">数字与后台一致、10 秒内可查、连续 7 天零人工</textarea>
+        </div>
+        <div class="field">
+          <label for="f-constraint">约束</label>
+          <textarea id="f-constraint">只能用 Google Apps Script，不引入付费服务</textarea>
+        </div>
+
+        <button class="btn" id="genPrompt">生成提问</button>
+
+        <div class="prompt-out" id="promptOut"></div>
+        <div class="copy-row" id="copyRow" style="display:none">
+          <button class="btn btn-ghost" id="copyPrompt">复制</button>
+          <span class="copy-msg" id="copyMsg">已复制 ✓</span>
+        </div>
+
+        <div class="demo-foot">这就是《提问即生产力》的核心——把需求讲清楚，AI 才能把工具做出来。</div>
+      </div>
+
+      <div class="demo-card">
+        <h3>Demo B · 剧目盈亏 CPI 线计算器</h3>
+        <div class="demo-sub">拖动滑杆，看盈亏分界线怎么随假设变化</div>
+        <div class="cpi-disclaimer">演示模型，参数为虚构示例，与任何真实项目数据无关</div>
+
+        <div class="slider-row">
+          <div class="top"><span>假想付费率</span><span class="num" id="rPayRateLabel">3.0%</span></div>
+          <input type="range" id="rPayRate" min="0.5" max="10" step="0.1" value="3">
+        </div>
+        <div class="slider-row">
+          <div class="top"><span>假想客单价</span><span class="num" id="rPriceLabel">$40</span></div>
+          <input type="range" id="rPrice" min="5" max="120" step="1" value="40">
+        </div>
+        <div class="slider-row">
+          <div class="top"><span>目标 ROI</span><span class="num" id="rRoiLabel">30%</span></div>
+          <input type="range" id="rRoi" min="10" max="80" step="1" value="30">
+        </div>
+
+        <svg class="cpi-chart" viewBox="0 0 400 140" id="cpiChart" role="img" aria-label="盈亏CPI线示意图">
+          <line x1="20" y1="120" x2="380" y2="120" stroke="#dededa" stroke-width="1"/>
+          <line x1="20" y1="20" x2="20" y2="120" stroke="#dededa" stroke-width="1"/>
+          <text x="20" y="14" font-size="10" fill="#8b8e92" font-family="Georgia,serif">消耗越低越安全 →</text>
+          <line id="cpiLine" x1="20" y1="70" x2="380" y2="70" stroke="#1f4438" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <circle id="cpiDot" cx="200" cy="70" r="4" fill="#1f4438"/>
+          <text id="cpiTag" x="210" y="65" font-size="12" fill="#17181a" font-weight="700" font-family="Georgia,serif">CPI</text>
+        </svg>
+        <div class="cpi-readout">
+          <div>盈亏平衡 CPI<span class="v num" id="cpiVal">$—</span></div>
+          <div style="max-width:260px">含义<span style="font-size:12.5px;font-weight:400;display:block;margin-top:4px">高于这条线，$50 消耗内基本能判断这条素材不达标</span></div>
+        </div>
+
+        <div class="demo-foot">真实项目里，这个模型把"能不能投"的判断从等待付费回传提前到了 $50 消耗。</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ AI CAPABILITY ============ -->
+<section id="capability">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>不是会用 AI，是让 AI 产出生产级工具</h2>
+    </div>
+    <div class="cap-method">
+      <b>方法：</b>四要素提问框架（现状 / 输入输出 / 验收标准 / 约束）——可复制、可教学，公司级课程《提问即生产力》主讲。
+    </div>
+    <div class="cap-grid">
+      <div class="cap-item"><div class="t">媒体 API 数据管道<br>（Meta × AppsFlyer 素材级聚合）</div></div>
+      <div class="cap-item"><div class="t">自动化日报与定时推送</div></div>
+      <div class="cap-item"><div class="t">Looker Studio 多平台实时看板</div></div>
+      <div class="cap-item"><div class="t">一站式素材工作台</div></div>
+      <div class="cap-item"><div class="t">AI 素材批量产线（5 语种）</div></div>
+      <div class="cap-item"><div class="t">AI 直接操作浏览器与本地文件</div></div>
+    </div>
+    <div class="skill-row">
+      <span class="tag">VibeCoding</span>
+      <span class="tag">AI 工作流搭建</span>
+      <span class="tag">AI 知识库管理</span>
+      <span class="tag">Google Apps Script</span>
+      <span class="tag">Looker Studio</span>
+      <span class="tag">媒体 API</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOBBY ============ -->
+<section class="toolroom" id="hobby">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>业余时间也在动手</h2>
+      <p>不止投放。看到问题就想自己写个工具解决，是我的日常状态。</p>
+    </div>
+    <div class="hobby-grid">
+      <a class="hobby-card" href="#" id="hobbyFip" target="_blank" rel="noopener">
+        <div class="t">猫传腹（FIP）预诊问卷</div>
+        <div class="d">按血检指标打分，实时算出疑似等级的自测小工具</div>
+        <div class="go">打开 demo →</div>
+      </a>
+      <a class="hobby-card" href="#" id="hobbyEat" target="_blank" rel="noopener">
+        <div class="t">今天吃什么</div>
+        <div class="d">口味问卷 + AI 推荐，帮自己解决每天最难的选择题</div>
+        <div class="go">打开 demo →</div>
+      </a>
+      <div class="hobby-card" style="cursor:default">
+        <div class="t">健康小助手（喝水/久坐/眼保健操）</div>
+        <div class="d">原生 macOS app（Swift/AppKit），不喝水水杯就一直长大铺满屏，直到你点它</div>
+      </div>
+      <div class="hobby-card" style="cursor:default">
+        <div class="t">国庆机票捡漏</div>
+        <div class="d">每天自动扫开口程机票价格，攒出历史分位线，跌破就飞书提醒自己</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ ABOUT / CONTACT ============ -->
+<section class="about" id="about">
+  <div class="wrap">
+    <h2>关于我 / 联系</h2>
+    <div class="about-grid">
+      <div class="about-block">
+        <h3>教育背景</h3>
+        <p>北京工商大学 · 英语翻译硕士（考研初复试双第一）</p>
+        <p>英语学士 · 2019.09–2025.06</p>
+        <h3 style="margin-top:32px">语言能力</h3>
+        <p>英语（专八 · BEC 高级 · CATTI 三级笔译）、日语韩语（初级）</p>
+        <p>西语 / 法语 / 意大利语 / 德语 / 日语 / 印尼语 素材 QC 经验</p>
+      </div>
+      <div class="about-block">
+        <h3>联系方式</h3>
+        <div class="contact-row">182-3425-3375（微信同号）</div>
+        <div class="contact-row">niutong1210@163.com</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>本页面不收录于搜索引擎，仅用于求职沟通。</footer>
+
+<script>
+(function(){
+  // ---- Demo A: 四要素提问生成器 ----
+  var genBtn = document.getElementById('genPrompt');
+  var out = document.getElementById('promptOut');
+  var copyRow = document.getElementById('copyRow');
+  var copyBtn = document.getElementById('copyPrompt');
+  var copyMsg = document.getElementById('copyMsg');
+
+  genBtn.addEventListener('click', function(){
+    var status = document.getElementById('f-status').value.trim();
+    var io = document.getElementById('f-io').value.trim();
+    var accept = document.getElementById('f-accept').value.trim();
+    var constraint = document.getElementById('f-constraint').value.trim();
+    var text =
+      '【现状】\n' + (status || '（未填写）') + '\n\n' +
+      '【输入输出】\n' + (io || '（未填写）') + '\n\n' +
+      '【验收标准】\n' + (accept || '（未填写）') + '\n\n' +
+      '【约束】\n' + (constraint || '（未填写）') + '\n\n' +
+      '请基于以上信息，给出可落地的实现方案，并说明关键取舍。';
+    out.textContent = text;
+    out.classList.add('show');
+    copyRow.style.display = 'flex';
+    copyMsg.classList.remove('show');
+  });
+
+  copyBtn.addEventListener('click', function(){
+    var text = out.textContent;
+    if (!text) return;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(showCopied, showCopied);
+    } else {
+      showCopied();
+    }
+  });
+  function showCopied(){
+    copyMsg.classList.add('show');
+    setTimeout(function(){ copyMsg.classList.remove('show'); }, 1800);
+  }
+
+  // ---- Demo B: 剧目盈亏 CPI 线计算器 ----
+  var rPayRate = document.getElementById('rPayRate');
+  var rPrice = document.getElementById('rPrice');
+  var rRoi = document.getElementById('rRoi');
+  var cpiLine = document.getElementById('cpiLine');
+  var cpiDot = document.getElementById('cpiDot');
+  var cpiTag = document.getElementById('cpiTag');
+  var cpiVal = document.getElementById('cpiVal');
+
+  function updateCPI(){
+    var payRate = parseFloat(rPayRate.value) / 100;
+    var price = parseFloat(rPrice.value);
+    var roi = parseFloat(rRoi.value) / 100;
+
+    document.getElementById('rPayRateLabel').textContent = rPayRate.value + '%';
+    document.getElementById('rPriceLabel').textContent = '$' + rPrice.value;
+    document.getElementById('rRoiLabel').textContent = rRoi.value + '%';
+
+    // 盈亏 CPI = 付费率 × 客单价 / (1 + 目标ROI)
+    var cpi = (payRate * price) / (1 + roi);
+    cpiVal.textContent = '$' + cpi.toFixed(2);
+
+    var minV = 0.3, maxV = 8;
+    var clamped = Math.max(minV, Math.min(maxV, cpi));
+    var t = (clamped - minV) / (maxV - minV);
+    var y = 110 - t * 90;
+
+    cpiLine.setAttribute('y1', y);
+    cpiLine.setAttribute('y2', y);
+    cpiDot.setAttribute('cy', y);
+    cpiTag.setAttribute('y', y - 8);
+    cpiTag.textContent = 'CPI ≈ $' + cpi.toFixed(2);
+  }
+  [rPayRate, rPrice, rRoi].forEach(function(el){ el.addEventListener('input', updateCPI); });
+  updateCPI();
+
+  // ---- Method loop: scroll-driven signature animation ----
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var steps = Array.prototype.slice.call(document.querySelectorAll('.loop-step'));
+  var fill = document.getElementById('loopFill');
+  var section = document.getElementById('method');
+
+  if (reduceMotion) {
+    steps.forEach(function(s){ s.classList.add('is-active'); });
+    if (fill) fill.style.width = '100%';
+  } else if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) entry.target.classList.add('is-active');
+      });
+    }, { threshold: 0.6 });
+    steps.forEach(function(s){ io.observe(s); });
+
+    var ticking = false;
+    function updateFill(){
+      ticking = false;
+      var rect = section.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      var total = rect.height + vh;
+      var passed = vh - rect.top;
+      var progress = Math.max(0, Math.min(1, passed / total));
+      if (fill) fill.style.width = (progress * 100) + '%';
+    }
+    window.addEventListener('scroll', function(){
+      if (!ticking) { requestAnimationFrame(updateFill); ticking = true; }
+    }, { passive: true });
+    updateFill();
+  } else {
+    steps.forEach(function(s){ s.classList.add('is-active'); });
+  }
+
+  // ---- Hobby demo links ----
+  document.getElementById('hobbyFip').href = 'https://claude.ai/code/artifact/500e848d-7576-42a6-932d-c0be662f3c33';
+  document.getElementById('hobbyEat').href = 'https://claude.ai/code/artifact/7985298b-b99d-4ea7-b771-d1f5d7333677';
+})();
+</script>
+</body>
+</html>
