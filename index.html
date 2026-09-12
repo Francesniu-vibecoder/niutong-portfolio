@@ -68,6 +68,9 @@
     font-size:14.5px;color:var(--ink-2);padding:26px 0 100px;max-width:640px;
   }
   .hero .closer b{color:var(--ink);font-weight:600;border-bottom:1px solid var(--accent)}
+  .resource-links{display:flex;flex-wrap:wrap;gap:18px;margin-top:18px;font-size:13px;color:var(--accent-2)}
+  .resource-links a{text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px}
+  .resource-links a:hover{color:var(--bad);border-color:var(--bad)}
   @media (max-width:640px){ .fact-strip{grid-template-columns:1fr} .fact{border-left:none;border-top:1px solid var(--line);padding-left:0}
     .fact:first-child{border-top:none} }
 
@@ -127,6 +130,22 @@
   .proj-shot{border:1px solid var(--line);margin-top:6px}
   .proj-shot img{width:100%}
   .shot-cap{font-size:12px;color:var(--muted);margin-top:10px;font-style:italic;font-family:var(--serif)}
+
+  /* ============ PROOF / TEACHING ============ */
+  .proof{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .proof-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:0;border-top:1px solid var(--line-strong)}
+  @media (max-width:820px){ .proof-grid{grid-template-columns:1fr} }
+  .proof-card{padding:34px 38px 36px;border-left:1px solid var(--line-strong)}
+  .proof-grid .proof-card:first-child{border-left:none}
+  @media (max-width:820px){ .proof-card{border-left:none;border-top:1px solid var(--line-strong)} .proof-grid .proof-card:first-child{border-top:none} }
+  .proof-label{font-size:11.5px;color:var(--muted);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+  .proof-card h3{font-family:var(--serif);font-size:22px;margin-bottom:10px}
+  .proof-card p{font-size:14px;color:var(--ink-2);line-height:1.85;margin:0 0 18px}
+  .proof-card ul{margin:0 0 22px;padding-left:19px;font-size:14px;color:var(--ink-2);line-height:1.9}
+  .proof-card li::marker{color:var(--accent)}
+  .proof-image{width:100%;max-height:300px;object-fit:cover;object-position:top;border:1px solid var(--line);margin:0 0 16px}
+  .proof-links{display:flex;flex-wrap:wrap;gap:12px}
+  .proof-links .btn{font-size:12px;padding:9px 15px;text-decoration:none;display:inline-block}
 
   /* ============ TOOL ROOM ============ */
   .toolroom{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -212,6 +231,12 @@
   .about-block h3{font-size:11.5px;color:var(--muted);font-weight:700;letter-spacing:.1em;margin-bottom:16px;text-transform:uppercase}
   .about-block p{font-size:15px;color:var(--ink-2);line-height:2;margin:0 0 4px}
   .contact-row{font-size:15px;color:var(--ink);margin-bottom:12px;font-family:var(--serif)}
+  .expectation{background:var(--accent-wash);border-top:1px solid var(--line);padding:82px 0}
+  .expectation h2{font-family:var(--serif);font-size:clamp(22px,2.8vw,28px);margin-bottom:24px}
+  .role-tags{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px}
+  .role-tag{font-size:13px;color:var(--accent-2);border:1px solid var(--accent);padding:7px 12px;background:rgba(255,255,255,.45)}
+  .expectation-copy{max-width:700px;font-size:15px;color:var(--ink-2);line-height:2;margin:0 0 8px}
+  .expectation-copy strong{color:var(--ink);font-weight:600}
   footer{
     text-align:center;padding:30px 0;font-size:12px;color:var(--muted);border-top:1px solid var(--line);
   }
@@ -228,13 +253,18 @@
   <div class="wrap">
     <span class="eyebrow">海外效果投放 · AI NATIVE</span>
     <h1>我用 AI 重做了「效果广告投放」这份工作</h1>
-    <p class="sub">素材当天产 · 数据自动清 · 判断当天下</p>
+    <p class="sub">素材当天产 · 数据自动清 · 判断当天下 · 结果持续回收</p>
     <div class="fact-strip">
       <div class="fact"><span class="n num">5 个</span><span class="l">同时操盘的跨行业出海项目<br>（同组同级平均 3 个）</span></div>
-      <div class="fact"><span class="n num">160 万+ 美元</span><span class="l">累计管理预算</span></div>
+      <div class="fact"><span class="n num">250 万+ 美元</span><span class="l">累计管理预算</span></div>
       <div class="fact"><span class="n num">4 个</span><span class="l">市场带：欧美澳 / 日韩 / 台湾 / 拉美</span></div>
     </div>
-    <div class="closer">方法论已在<b>阿里、美团、币安</b>等大型项目充分验证，受邀主讲公司级 AI 课程。</div>
+    <div class="closer">阿里 CoCreate 项目 3 个月管理 <b>79 万美元</b>，客户因结果追加项目并主动延长原定服务期；方法论已在<b>阿里、美团、币安</b>等大型项目验证。</div>
+    <div class="resource-links" aria-label="公开材料">
+      <a href="assets/niutong-resume-2026-09.pdf" target="_blank" rel="noopener">查看更新版简历</a>
+      <a href="#proof">课程与推荐信</a>
+      <a href="#expectations">求职期望</a>
+    </div>
   </div>
 </header>
 
@@ -262,7 +292,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2>验证项目</h2>
-      <p>四个不同行业、不同区域的真实项目，方法论在每一个上都跑通过。点开看具体做法。</p>
+      <p>四个代表案例来自五个同时操盘的出海项目，覆盖不同行业与区域。点开看具体做法。</p>
     </div>
 
     <details class="proj-card">
@@ -273,13 +303,14 @@
             <span class="proj-meta">B2B · 欧美 T1 + 韩国 · Meta · 2026.06–至今</span>
           </div>
           <div class="proj-strategy"><b>AI 打法：</b>AI 素材产线，单项目每天至少 6 张图稳定供给——传统做法需一名全职设计或外包（约 300 元/张）且要排期</div>
-          <div class="proj-result">欧美市场做到全代理最低线索成本；客户追加韩国与免费票项目，同等量级成本<b>比友商代理低 60%</b>，用户质量达标。</div>
-          <span class="proj-highlight">工作流被客户团队采用（甲方实习生直接进流程协作）</span>
+          <div class="proj-result"><b>3 个月累计管理 79 万美元</b>；原始任务是赛事线索招募，欧美市场做到全代理最低线索成本后，客户追加韩国、免费通行证和付费通行证项目，同等量级成本<b>比友商代理低 60%</b>，用户质量达标。</div>
+          <span class="proj-highlight">客户主动延长原定服务期；工作流被客户团队采用（甲方实习生直接进流程协作）</span>
         </div>
         <span class="chevron">+</span>
       </summary>
       <div class="proj-detail"><div class="proj-detail-inner">
         <ul>
+          <li>项目从赛事线索招募起步，客户在结果达标后追加韩国、免费通行证和付费通行证项目，并主动延长原定服务期</li>
           <li>中英双语文案由 Claude 结构化生成（标题/副标/奖池/CTA 等字段各自独立），生成即带风格与长度约束，不用人工从头改</li>
           <li>背景图坚持"GPT 只出无文字场景图，文案由程序叠加"——避免了返工率最高的"AI 画错文字"问题</li>
           <li>每张图自动查红线（品牌规范/合规小字/繁简体）+ 视觉终审，打回原因会喂回规则库，越用越准</li>
@@ -322,7 +353,7 @@
             <span class="proj-meta">本地生活 · 巴西 · Meta/Google/TikTok · 2025.07–至今</span>
           </div>
           <div class="proj-strategy"><b>AI 打法：</b>跟 AI 学会直接拉媒体 API，数据清洗与报告输出自动化，<b>每周省出约 1 天</b>全部投到策略判断</div>
-          <div class="proj-result">累计管理 70 万+ 美元预算，接手后<b>综合线索成本降低 50%</b>。</div>
+          <div class="proj-result">累计管理 <b>80 万+ 美元</b>预算，接手后<b>综合线索成本降低 50%</b>。</div>
         </div>
         <span class="chevron">+</span>
       </summary>
@@ -356,6 +387,41 @@
       </div></div>
     </details>
 
+  </div>
+</section>
+
+<!-- ============ PROOF / TEACHING ============ -->
+<section class="proof" id="proof">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>业务结果之外，我也在训练团队</h2>
+      <p>把一线投放判断讲清楚、做成工具，再让别人可以照着复用。</p>
+    </div>
+    <div class="proof-grid">
+      <article class="proof-card">
+        <div class="proof-label">公司级 AI 课程 · 第 46 期</div>
+        <h3>AI 不只是聊天</h3>
+        <img class="proof-image" src="assets/ai-course-46-cover.jpg" alt="AI小课第46期课程封面：AI不只是聊天" loading="lazy">
+        <p>主讲“把真实工作变成可执行流程”，在公司已完成的 46 期课程中反馈评分排名第 3，2026 年课程排名第 1。</p>
+        <div class="proof-links">
+          <a class="btn" href="assets/ai-course-ai-is-not-chatting.pptx" target="_blank" rel="noopener" download>查看课程 PPTX</a>
+          <a class="btn btn-ghost" href="assets/ai-course-46-cover.jpg" target="_blank" rel="noopener">打开课程封面</a>
+        </div>
+      </article>
+      <article class="proof-card">
+        <div class="proof-label">第三方推荐</div>
+        <h3>一位知名 AI 圈猎头的推荐</h3>
+        <p>推荐信提到：她能把广告投放、客户协作和 AI 工作流结合起来，让甲方继续追加预算、项目和资源。</p>
+        <ul>
+          <li>真实项目验证过海外投放与用户增长能力</li>
+          <li>能把数据清洗、素材生产和重复沟通交给 AI</li>
+          <li>适合直接面对业务结果的小而核心团队</li>
+        </ul>
+        <div class="proof-links">
+          <a class="btn" href="assets/niutong-recommendation.pdf" target="_blank" rel="noopener" download>查看完整推荐信 PDF</a>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -517,6 +583,22 @@
         <div class="contact-row">niutong1210@163.com</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ EXPECTATIONS ============ -->
+<section class="expectation" id="expectations">
+  <div class="narrow">
+    <h2>求职期望</h2>
+    <div class="role-tags" aria-label="求职方向">
+      <span class="role-tag">AI 投放系统训练师</span>
+      <span class="role-tag">AI 产品用户增长</span>
+      <span class="role-tag">海外增长 / Growth Marketing</span>
+      <span class="role-tag">增长运营</span>
+    </div>
+    <p class="expectation-copy"><strong>希望加入真正使用 AI 工作的团队。</strong>优先关注 AI 产品、出海、电商、内容增长和工具产品，也愿意在小而核心的团队里直接面对业务结果。</p>
+    <p class="expectation-copy">我希望把一线投放判断、客户协作和 AI 工作流继续训练成团队可以复用的系统，补齐用户运营、商业回收和全链路 ROI。</p>
+    <p class="expectation-copy">目前人在上海，北上广深杭的机会都可以聊。</p>
   </div>
 </section>
 
