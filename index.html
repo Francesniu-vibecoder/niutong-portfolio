@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>牛童 · 海外效果投放 × AI Native</title>
+<title>牛童 · 海外效果广告投放与获客顾问 × AI 增长</title>
 <style>
   :root{
     --bg:#ffffff;
@@ -71,6 +71,16 @@
   .resource-links{display:flex;flex-wrap:wrap;gap:18px;margin-top:18px;font-size:13px;color:var(--accent-2)}
   .resource-links a{text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px}
   .resource-links a:hover{color:var(--bad);border-color:var(--bad)}
+  .profile-label{font-size:11.5px;color:var(--muted);font-weight:700;letter-spacing:.1em;margin:0 0 10px;text-transform:uppercase}
+  .profile-summary{max-width:720px;font-size:16px;color:var(--ink-2);line-height:1.9;margin:0 0 26px}
+  .pathway-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:28px 0 18px;max-width:720px}
+  .pathway-button{display:flex;flex-direction:column;gap:5px;padding:17px 20px;border:1px solid var(--line-strong);background:var(--bg);text-decoration:none;color:var(--ink);transition:background .2s,border-color .2s,transform .2s}
+  .pathway-button:hover{background:var(--accent-wash);border-color:var(--accent);transform:translateY(-1px)}
+  .pathway-button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .pathway-button.primary:hover{background:var(--accent-2);border-color:var(--accent-2)}
+  .pathway-button span{font-family:var(--serif);font-size:18px;font-weight:600}
+  .pathway-button small{font-size:12px;opacity:.78;line-height:1.5}
+  @media (max-width:640px){ .pathway-buttons{grid-template-columns:1fr} }
   @media (max-width:640px){ .fact-strip{grid-template-columns:1fr} .fact{border-left:none;border-top:1px solid var(--line);padding-left:0}
     .fact:first-child{border-top:none} }
 
@@ -146,6 +156,25 @@
   .proof-image{width:100%;max-height:300px;object-fit:cover;object-position:top;border:1px solid var(--line);margin:0 0 16px}
   .proof-links{display:flex;flex-wrap:wrap;gap:12px}
   .proof-links .btn{font-size:12px;padding:9px 15px;text-decoration:none;display:inline-block}
+
+  /* ============ CONSULTING ============ */
+  .consulting{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .consulting-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line-strong)}
+  @media (max-width:820px){ .consulting-grid{grid-template-columns:1fr} }
+  .consulting-card{padding:34px 38px 32px;border-left:1px solid var(--line-strong)}
+  .consulting-grid .consulting-card:first-child{border-left:none}
+  @media (max-width:820px){ .consulting-card{border-left:none;border-top:1px solid var(--line-strong)} .consulting-grid .consulting-card:first-child{border-top:none} }
+  .consulting-label{font-size:11.5px;color:var(--muted);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+  .consulting-card h3{font-family:var(--serif);font-size:21px;margin-bottom:12px}
+  .consulting-card p,.consulting-card li{font-size:14px;color:var(--ink-2);line-height:1.9}
+  .consulting-card p{margin:0 0 12px}
+  .consulting-card ul,.consulting-card ol{margin:0;padding-left:20px}
+  .consulting-card li::marker{color:var(--accent)}
+  .consulting-terms{margin-top:18px;padding:26px 28px;border-left:2px solid var(--accent);background:var(--bg)}
+  .consulting-terms h3{font-family:var(--serif);font-size:21px;margin-bottom:10px}
+  .consulting-terms p{max-width:760px;font-size:14px;color:var(--ink-2);line-height:1.9;margin:0 0 8px}
+  .consulting-terms p:last-child{margin-bottom:0}
+  .consulting-cta{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--ink);margin-top:26px}
 
   /* ============ TOOL ROOM ============ */
   .toolroom{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -251,24 +280,88 @@
 <!-- ============ HERO ============ -->
 <header class="hero">
   <div class="wrap">
-    <span class="eyebrow">海外效果投放 · AI NATIVE</span>
-    <h1>我用 AI 重做了「效果广告投放」这份工作</h1>
-    <p class="sub">素材当天产 · 数据自动清 · 判断当天下 · 结果持续回收</p>
+    <span class="eyebrow">海外效果广告 · 用户增长 · AI 工作流</span>
+    <h1>我把海外获客，做成可持续优化的增长系统</h1>
+    <p class="sub">个人履历概述</p>
+    <p class="profile-summary">我长期负责海外效果广告与用户增长，尤其擅长 Meta、TikTok 信息流投放。做过阿里、美团、币安等项目，累计管理 <b>250 万+ 美元</b>预算；阿里项目 3 个月完成 <b>79 万美元</b>消耗，并因结果获得客户追加项目和延长合作。除了投放，我也会用 AI 把数据整理、素材生产和判断流程做成可复用的工作方式。</p>
     <div class="fact-strip">
       <div class="fact"><span class="n num">5 个</span><span class="l">同时操盘的跨行业出海项目<br>（同组同级平均 3 个）</span></div>
       <div class="fact"><span class="n num">250 万+ 美元</span><span class="l">累计管理预算</span></div>
       <div class="fact"><span class="n num">4 个</span><span class="l">市场带：欧美澳 / 日韩 / 台湾 / 拉美</span></div>
     </div>
     <div class="closer">阿里 CoCreate 项目 3 个月管理 <b>79 万美元</b>，客户因结果追加项目并主动延长原定服务期；方法论已在<b>阿里、美团、币安</b>等大型项目验证。</div>
+    <div class="pathway-buttons" aria-label="选择了解方向">
+      <a class="pathway-button primary" href="#expectations"><span>求职方向</span><small>了解我想加入什么样的团队 →</small></a>
+      <a class="pathway-button" href="#consulting"><span>海外获客顾问</span><small>了解我怎样帮项目找到客户 →</small></a>
+    </div>
     <div class="resource-links" aria-label="公开材料">
       <a href="assets/niutong-resume-2026-09.pdf" target="_blank" rel="noopener">查看更新版简历</a>
       <a href="#proof">课程与推荐信</a>
-      <a href="#expectations">求职期望</a>
+      <a href="#about">联系方式</a>
     </div>
   </div>
 </header>
 
 <main id="main">
+
+<!-- ============ EXPECTATIONS ============ -->
+<section class="expectation" id="expectations">
+  <div class="narrow">
+    <h2>求职期望</h2>
+    <div class="role-tags" aria-label="求职方向">
+      <span class="role-tag">AI 投放系统训练师</span>
+      <span class="role-tag">AI 产品用户增长</span>
+      <span class="role-tag">海外增长 / Growth Marketing</span>
+      <span class="role-tag">增长运营</span>
+    </div>
+    <p class="expectation-copy"><strong>希望加入真正使用 AI 工作的团队。</strong>优先关注 AI 产品、出海、电商、内容增长和工具产品，也愿意在小而核心的团队里直接面对业务结果。</p>
+    <p class="expectation-copy">我希望把一线投放判断、客户协作和 AI 工作流继续训练成团队可以复用的系统，补齐用户运营、商业回收和全链路 ROI。</p>
+    <p class="expectation-copy">目前人在上海，北上广深杭的机会都可以聊。</p>
+    <div class="resource-links" aria-label="求职材料">
+      <a href="assets/niutong-resume-2026-09.pdf" target="_blank" rel="noopener">查看更新版简历 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONSULTING ============ -->
+<section class="consulting" id="consulting">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="proof-label">面向老板 / 项目负责人</div>
+      <h2>海外效果广告投放获客顾问</h2>
+      <p>如果你已经有产品，但海外获客还没有跑顺，我可以从“问题在哪里”开始，陪你把投放和线索跟进做成一套能持续优化的流程。</p>
+    </div>
+    <div class="consulting-grid">
+      <article class="consulting-card">
+        <div class="consulting-label">我能帮你做什么</div>
+        <h3>从广告准备，到真正有价值的客户</h3>
+        <ul>
+          <li>主要负责 Meta（Facebook / Instagram）和 TikTok 信息流广告</li>
+          <li>可以承包图片素材制作，也可以根据产品现状给出图片方向</li>
+          <li>规划视频素材方向：拍什么、怎么讲、先测试哪些内容</li>
+          <li>检查现有广告、页面和线索承接，找出问题和优先级</li>
+          <li>根据真实线索反馈，帮助团队判断什么样的人才是有效客户</li>
+        </ul>
+      </article>
+      <article class="consulting-card">
+        <div class="consulting-label">合作前先做什么</div>
+        <h3>先了解项目，再决定怎么投</h3>
+        <ol>
+          <li>详细沟通产品现状、目标客户、现在遇到的问题，以及希望投放解决什么</li>
+          <li>诊断现有广告、页面和线索跟进情况，做一次综合评估</li>
+          <li>一起确定先测试什么、客户需要准备什么，以及如何判断线索质量</li>
+          <li>根据第一轮真实反馈，再决定是否扩大范围和投入</li>
+        </ol>
+      </article>
+    </div>
+    <div class="consulting-terms">
+      <h3>合作方式与报价</h3>
+      <p>服务费按“基础服务费”或“转化提成”核算，两者取高；具体金额会根据项目难度、现有基础、线索链路和预计投入时间确定。广告预算由客户直接支付。</p>
+      <p>合作需要客户配合跟进线索质量并及时反馈。我会提供简单、可执行的判断方法，帮助团队区分“看起来有量”和“真正有价值”。</p>
+    </div>
+    <div class="consulting-cta">如果你正在准备进入海外市场，或已有投放但不知道问题卡在哪里，欢迎先聊项目现状。</div>
+  </div>
+</section>
 
 <!-- ============ METHOD ============ -->
 <section class="method" id="method">
@@ -375,14 +468,16 @@
             <span class="proj-client">九州 · AI 短剧 Pinterest 投放</span>
             <span class="proj-meta">短剧 · 欧美澳 T1 · Pinterest · 2026.05–至今</span>
           </div>
-          <div class="proj-strategy"><b>AI 打法：</b>用 AI 建"剧目盈亏 CPI 线"预估模型，ROI 达标判断从等待付费回传<b>提前到 $50 消耗量级</b>；每日 AI 报表辅助决策</div>
+          <div class="proj-strategy"><b>AI 打法：</b>把投放判断写成可复用的 skill，训练 AI 先给出基础调整方案；打通 Agent 和媒体 API，在规则范围内自动读取数据、执行调整并回看结果，让广告优化形成自迭代闭环</div>
           <div class="proj-result">新剧测试淘汰效率<b>提升 50%+</b>；规模化放量下头部 ROI 稳定超 KPI（33% vs 30%）。</div>
         </div>
         <span class="chevron">+</span>
       </summary>
       <div class="proj-detail"><div class="proj-detail-inner">
         <ul>
-          <li>盈亏 CPI 线模型的教学版就在下面「工具间」— Demo B，滑一滑就能看懂这个判断是怎么提前的</li>
+          <li>把判断规则写成 skill，训练 AI 基于每日数据先给出基础调整方案，再由我审核关键动作，减少每次从零开始判断</li>
+          <li>打通 Agent 与媒体 API，形成“读取数据—给出建议—执行调整—回看结果”的闭环，让广告调整可以持续自迭代</li>
+          <li>用剧目盈亏线把 ROI 是否达标的判断从等待付费回传提前到 <b>$50 消耗量级</b>，每日 AI 报表辅助决策</li>
         </ul>
       </div></div>
     </details>
@@ -421,113 +516,6 @@
           <a class="btn" href="assets/niutong-recommendation.pdf" target="_blank" rel="noopener" download>查看完整推荐信 PDF</a>
         </div>
       </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TOOL ROOM ============ -->
-<section class="toolroom" id="toolroom">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>工具间</h2>
-      <p>两个可以直接玩的小 demo，感受一下"提问"和"模型"具体是怎么落地的。</p>
-    </div>
-    <div class="demo-grid">
-
-      <div class="demo-card">
-        <h3>Demo A · 四要素提问生成器</h3>
-        <div class="demo-sub">现状 / 输入输出 / 验收标准 / 约束 —— 四格填完就是一段能直接喂给 AI 的结构化需求</div>
-
-        <div class="field">
-          <label for="f-status">现状</label>
-          <textarea id="f-status">每天手工从 3 个媒体后台导数据拼日报要 10 分钟</textarea>
-        </div>
-        <div class="field">
-          <label for="f-io">输入输出</label>
-          <textarea id="f-io">输入是 Meta API 凭证和表格模板，输出是每天 9 点自动更新并推送到工作群的日报</textarea>
-        </div>
-        <div class="field">
-          <label for="f-accept">验收标准</label>
-          <textarea id="f-accept">数字与后台一致、10 秒内可查、连续 7 天零人工</textarea>
-        </div>
-        <div class="field">
-          <label for="f-constraint">约束</label>
-          <textarea id="f-constraint">只能用 Google Apps Script，不引入付费服务</textarea>
-        </div>
-
-        <button class="btn" id="genPrompt">生成提问</button>
-
-        <div class="prompt-out" id="promptOut"></div>
-        <div class="copy-row" id="copyRow" style="display:none">
-          <button class="btn btn-ghost" id="copyPrompt">复制</button>
-          <span class="copy-msg" id="copyMsg">已复制 ✓</span>
-        </div>
-
-        <div class="demo-foot">这就是《提问即生产力》的核心——把需求讲清楚，AI 才能把工具做出来。</div>
-      </div>
-
-      <div class="demo-card">
-        <h3>Demo B · 剧目盈亏 CPI 线计算器</h3>
-        <div class="demo-sub">拖动滑杆，看盈亏分界线怎么随假设变化</div>
-        <div class="cpi-disclaimer">演示模型，参数为虚构示例，与任何真实项目数据无关</div>
-
-        <div class="slider-row">
-          <div class="top"><span>假想付费率</span><span class="num" id="rPayRateLabel">3.0%</span></div>
-          <input type="range" id="rPayRate" min="0.5" max="10" step="0.1" value="3">
-        </div>
-        <div class="slider-row">
-          <div class="top"><span>假想客单价</span><span class="num" id="rPriceLabel">$40</span></div>
-          <input type="range" id="rPrice" min="5" max="120" step="1" value="40">
-        </div>
-        <div class="slider-row">
-          <div class="top"><span>目标 ROI</span><span class="num" id="rRoiLabel">30%</span></div>
-          <input type="range" id="rRoi" min="10" max="80" step="1" value="30">
-        </div>
-
-        <svg class="cpi-chart" viewBox="0 0 400 140" id="cpiChart" role="img" aria-label="盈亏CPI线示意图">
-          <line x1="20" y1="120" x2="380" y2="120" stroke="#dededa" stroke-width="1"/>
-          <line x1="20" y1="20" x2="20" y2="120" stroke="#dededa" stroke-width="1"/>
-          <text x="20" y="14" font-size="10" fill="#8b8e92" font-family="Georgia,serif">消耗越低越安全 →</text>
-          <line id="cpiLine" x1="20" y1="70" x2="380" y2="70" stroke="#1f4438" stroke-width="1.5" stroke-dasharray="5 4"/>
-          <circle id="cpiDot" cx="200" cy="70" r="4" fill="#1f4438"/>
-          <text id="cpiTag" x="210" y="65" font-size="12" fill="#17181a" font-weight="700" font-family="Georgia,serif">CPI</text>
-        </svg>
-        <div class="cpi-readout">
-          <div>盈亏平衡 CPI<span class="v num" id="cpiVal">$—</span></div>
-          <div style="max-width:260px">含义<span style="font-size:12.5px;font-weight:400;display:block;margin-top:4px">高于这条线，$50 消耗内基本能判断这条素材不达标</span></div>
-        </div>
-
-        <div class="demo-foot">真实项目里，这个模型把"能不能投"的判断从等待付费回传提前到了 $50 消耗。</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============ AI CAPABILITY ============ -->
-<section id="capability">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>不是会用 AI，是让 AI 产出生产级工具</h2>
-    </div>
-    <div class="cap-method">
-      <b>方法：</b>四要素提问框架（现状 / 输入输出 / 验收标准 / 约束）——可复制、可教学，公司级课程《提问即生产力》主讲。
-    </div>
-    <div class="cap-grid">
-      <div class="cap-item"><div class="t">媒体 API 数据管道<br>（Meta × AppsFlyer 素材级聚合）</div></div>
-      <div class="cap-item"><div class="t">自动化日报与定时推送</div></div>
-      <div class="cap-item"><div class="t">Looker Studio 多平台实时看板</div></div>
-      <div class="cap-item"><div class="t">一站式素材工作台</div></div>
-      <div class="cap-item"><div class="t">AI 素材批量产线（5 语种）</div></div>
-      <div class="cap-item"><div class="t">AI 直接操作浏览器与本地文件</div></div>
-    </div>
-    <div class="skill-row">
-      <span class="tag">VibeCoding</span>
-      <span class="tag">AI 工作流搭建</span>
-      <span class="tag">AI 知识库管理</span>
-      <span class="tag">Google Apps Script</span>
-      <span class="tag">Looker Studio</span>
-      <span class="tag">媒体 API</span>
     </div>
   </div>
 </section>
@@ -586,100 +574,10 @@
   </div>
 </section>
 
-<!-- ============ EXPECTATIONS ============ -->
-<section class="expectation" id="expectations">
-  <div class="narrow">
-    <h2>求职期望</h2>
-    <div class="role-tags" aria-label="求职方向">
-      <span class="role-tag">AI 投放系统训练师</span>
-      <span class="role-tag">AI 产品用户增长</span>
-      <span class="role-tag">海外增长 / Growth Marketing</span>
-      <span class="role-tag">增长运营</span>
-    </div>
-    <p class="expectation-copy"><strong>希望加入真正使用 AI 工作的团队。</strong>优先关注 AI 产品、出海、电商、内容增长和工具产品，也愿意在小而核心的团队里直接面对业务结果。</p>
-    <p class="expectation-copy">我希望把一线投放判断、客户协作和 AI 工作流继续训练成团队可以复用的系统，补齐用户运营、商业回收和全链路 ROI。</p>
-    <p class="expectation-copy">目前人在上海，北上广深杭的机会都可以聊。</p>
-  </div>
-</section>
-
 <footer>本页面不收录于搜索引擎，仅用于求职沟通。</footer>
 
 <script>
 (function(){
-  // ---- Demo A: 四要素提问生成器 ----
-  var genBtn = document.getElementById('genPrompt');
-  var out = document.getElementById('promptOut');
-  var copyRow = document.getElementById('copyRow');
-  var copyBtn = document.getElementById('copyPrompt');
-  var copyMsg = document.getElementById('copyMsg');
-
-  genBtn.addEventListener('click', function(){
-    var status = document.getElementById('f-status').value.trim();
-    var io = document.getElementById('f-io').value.trim();
-    var accept = document.getElementById('f-accept').value.trim();
-    var constraint = document.getElementById('f-constraint').value.trim();
-    var text =
-      '【现状】\n' + (status || '（未填写）') + '\n\n' +
-      '【输入输出】\n' + (io || '（未填写）') + '\n\n' +
-      '【验收标准】\n' + (accept || '（未填写）') + '\n\n' +
-      '【约束】\n' + (constraint || '（未填写）') + '\n\n' +
-      '请基于以上信息，给出可落地的实现方案，并说明关键取舍。';
-    out.textContent = text;
-    out.classList.add('show');
-    copyRow.style.display = 'flex';
-    copyMsg.classList.remove('show');
-  });
-
-  copyBtn.addEventListener('click', function(){
-    var text = out.textContent;
-    if (!text) return;
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(showCopied, showCopied);
-    } else {
-      showCopied();
-    }
-  });
-  function showCopied(){
-    copyMsg.classList.add('show');
-    setTimeout(function(){ copyMsg.classList.remove('show'); }, 1800);
-  }
-
-  // ---- Demo B: 剧目盈亏 CPI 线计算器 ----
-  var rPayRate = document.getElementById('rPayRate');
-  var rPrice = document.getElementById('rPrice');
-  var rRoi = document.getElementById('rRoi');
-  var cpiLine = document.getElementById('cpiLine');
-  var cpiDot = document.getElementById('cpiDot');
-  var cpiTag = document.getElementById('cpiTag');
-  var cpiVal = document.getElementById('cpiVal');
-
-  function updateCPI(){
-    var payRate = parseFloat(rPayRate.value) / 100;
-    var price = parseFloat(rPrice.value);
-    var roi = parseFloat(rRoi.value) / 100;
-
-    document.getElementById('rPayRateLabel').textContent = rPayRate.value + '%';
-    document.getElementById('rPriceLabel').textContent = '$' + rPrice.value;
-    document.getElementById('rRoiLabel').textContent = rRoi.value + '%';
-
-    // 盈亏 CPI = 付费率 × 客单价 / (1 + 目标ROI)
-    var cpi = (payRate * price) / (1 + roi);
-    cpiVal.textContent = '$' + cpi.toFixed(2);
-
-    var minV = 0.3, maxV = 8;
-    var clamped = Math.max(minV, Math.min(maxV, cpi));
-    var t = (clamped - minV) / (maxV - minV);
-    var y = 110 - t * 90;
-
-    cpiLine.setAttribute('y1', y);
-    cpiLine.setAttribute('y2', y);
-    cpiDot.setAttribute('cy', y);
-    cpiTag.setAttribute('y', y - 8);
-    cpiTag.textContent = 'CPI ≈ $' + cpi.toFixed(2);
-  }
-  [rPayRate, rPrice, rRoi].forEach(function(el){ el.addEventListener('input', updateCPI); });
-  updateCPI();
-
   // ---- Method loop: scroll-driven signature animation ----
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var steps = Array.prototype.slice.call(document.querySelectorAll('.loop-step'));
